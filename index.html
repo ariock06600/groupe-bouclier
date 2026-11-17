@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groupe Bouclier - Accueil</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #0f2420;
+      color: #f4efe6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Barre de navigation */
+    nav {
+      background-color: #16332e;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #c59b27;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .nav-logo {
+      font-size: 1.3em;
+      font-weight: 800;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: #d8c8a8;
+      text-decoration: none;
+      font-size: 0.95em;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: #c59b27;
+    }
+    /* Contenu principal */
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      flex: 1;
+    }
+    .hero {
+      text-align: center;
+      margin-bottom: 50px;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #16332e 0%, #1e463f 100%);
+      border-radius: 14px;
+      border: 1px solid rgba(197, 155, 39, 0.3);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .hero h1 {
+      font-size: 2.8em;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    .hero p {
+      font-size: 1.15em;
+      color: #d8c8a8;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    /* Grille des cartes */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      background-color: #f4efe6;
+      color: #16332e;
+      text-decoration: none;
+      padding: 28px 24px;
+      border-radius: 12px;
+      border-bottom: 6px solid #c59b27;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    .card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+      background-color: #ffffff;
+    }
+    .card-icon {
+      font-size: 2.4em;
+      margin-bottom: 12px;
+    }
+    .card-title {
+      font-size: 1.35em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #16332e;
+    }
+    .card-desc {
+      font-size: 0.95em;
+      color: #4a5d59;
+      margin-bottom: 22px;
+      line-height: 1.5;
+    }
+    .card-btn {
+      align-self: flex-start;
+      background-color: #16332e;
+      color: #f4efe6;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 0.9em;
+      font-weight: 600;
+      transition: background-color 0.2s, color 0.2s;
+    }
+    .card:hover .card-btn {
+      background-color: #c59b27;
+      color: #16332e;
+    }
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #8fa39f;
+      font-size: 0.9em;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">🛡️ GROUPE BOUCLIER</a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Accueil</a>
+      <a href="ambassadeurs.html">Élèves ambassadeurs</a>
+      <a href="presentations.html">Les présentations</a>
+      <a href="ressources.html">Les ressources</a>
+      <a href="livres.html">Livres dont vous êtes le héros</a>
+      <a href="seances.html">Séances "Clé en main"</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="hero">
+      <h1>🛡️ Groupe Bouclier</h1>
+      <p>Outils, ressources et actions pour la prévention et la lutte contre le harcèlement</p>
+    </div>
+
+    <div class="grid">
+      <a href="presentations.html" class="card">
+        <div>
+          <div class="card-icon">📊</div>
+          <h3 class="card-title">Les présentations</h3>
+          <p class="card-desc">Supports visuels et diaporamas pour sensibiliser et informer.</p>
+        </div>
+        <span class="card-btn">Accéder →</span>
+      </a>
+
+      <a href="ressources.html" class="card">
+        <div>
+          <div class="card-icon">📚</div>
+          <h3 class="card-title">Les ressources</h3>
+          <p class="card-desc">Documents utiles, guides pratiques et références officielles.</p>
+        </div>
+        <span class="card-btn">Consulter →</span>
+      </a>
+
+      <a href="seances.html" class="card">
+        <div>
+          <div class="card-icon">🗝️</div>
+          <h3 class="card-title">Séances "Clé en main"</h3>
+          <p class="card-desc">Ateliers complets et prêts à l'emploi pour animer des interventions.</p>
+        </div>
+        <span class="card-btn">Découvrir →</span>
+      </a>
+
+      <a href="livres.html" class="card">
+        <div>
+          <div class="card-icon">📖</div>
+          <h3 class="card-title">Livres dont vous êtes le héros</h3>
+          <p class="card-desc">Parcours interactifs et mises en situation pour développer l'empathie.</p>
+        </div>
+        <span class="card-btn">Commencer →</span>
+      </a>
+
+      <a href="ambassadeurs.html" class="card">
+        <div>
+          <div class="card-icon">🤝</div>
+          <h3 class="card-title">Élèves ambassadeurs</h3>
+          <p class="card-desc">Espace dédié à la formation, au rôle et aux actions des ambassadeurs.</p>
+        </div>
+        <span class="card-btn">Explorer →</span>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    Groupe Bouclier — Prévention et lutte contre le harcèlement
+  </footer>
+
+</body>
+</html>
