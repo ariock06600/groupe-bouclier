@@ -1,1 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groupe Bouclier - Élèves ambassadeurs</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #0f2420;
+      color: #f4efe6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Barre de navigation */
+    nav {
+      background-color: #16332e;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #c59b27;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .nav-logo {
+      font-size: 1.3em;
+      font-weight: 800;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: #d8c8a8;
+      text-decoration: none;
+      font-size: 0.95em;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: #c59b27;
+    }
+    /* Contenu principal */
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 40px auto;
+      padding: 0 20px;
+      flex: 1;
+    }
+    .page-header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 45px 20px;
+      background: linear-gradient(135deg, #16332e 0%, #1e463f 100%);
+      border-radius: 14px;
+      border: 2px solid #c59b27;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+    .page-header h1 {
+      font-size: 2.4em;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .page-header p {
+      font-size: 1.1em;
+      color: #d8c8a8;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    /* Grille stricte de 3 colonnes */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+    @media (max-width: 650px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .card {
+      background-color: #f4efe6;
+      color: #16332e;
+      text-decoration: none;
+      padding: 24px 20px;
+      border-radius: 12px;
+      border-bottom: 6px solid #c59b27;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+      background-color: #ffffff;
+    }
+    .card-icon {
+      font-size: 2.1em;
+      margin-bottom: 10px;
+    }
+    .card-title {
+      font-size: 1.2em;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #16332e;
+    }
+    .card-desc {
+      font-size: 0.9em;
+      color: #4a5d59;
+      margin-bottom: 18px;
+      line-height: 1.45;
+    }
+    .card-btn {
+      align-self: flex-start;
+      background-color: #16332e;
+      color: #f4efe6;
+      padding: 8px 15px;
+      border-radius: 6px;
+      font-size: 0.88em;
+      font-weight: 600;
+      transition: background-color 0.2s, color 0.2s;
+    }
+    .card:hover .card-btn {
+      background-color: #c59b27;
+      color: #16332e;
+    }
+    .back-wrapper {
+      margin-top: 35px;
+      text-align: center;
+    }
+    .back-btn {
+      display: inline-block;
+      color: #d8c8a8;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 20px;
+      border: 1px solid rgba(197, 155, 39, 0.5);
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .back-btn:hover {
+      background-color: #c59b27;
+      color: #16332e;
+    }
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #8fa39f;
+      font-size: 0.9em;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
 
+  <nav>
+    <a href="index.html" class="nav-logo">🛡️ GROUPE BOUCLIER</a>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="ambassadeurs.html" class="active">Élèves ambassadeurs</a>
+      <a href="presentations.html">Les présentations</a>
+      <a href="ressources.html">Les ressources</a>
+      <a href="livres.html">Livres dont vous êtes le héros</a>
+      <a href="seances.html">Séances "Clé en main"</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>🤝 Élèves ambassadeurs</h1>
+      <p>Outils de recrutement, chartes, jeux et supports de formation pour les ambassadeurs</p>
+    </div>
+
+    <div class="grid">
+      <!-- LIGNE 1 -->
+      <a href="https://docs.google.com/presentation/d/1aiqYaldigCw_82REYYzxTAkoNGEAJrfKbjEo4l4tfBU/present?slide=id.g3aca8bbeeae_0_63" target="_blank" class="card">
+        <div>
+          <div class="card-icon">🎒</div>
+          <h3 class="card-title">Élèves ambassadeurs primaire</h3>
+          <p class="card-desc">Dispositif et ressources adaptés aux élèves de l'école élémentaire.</p>
+        </div>
+        <span class="card-btn">Ouvrir →</span>
+      </a>
+
+      <a href="https://docs.google.com/presentation/d/1wwim1EhVJ1PbiS7jQLjeXAtLX88A56sGIlvRQz2FLfs/present?slide=id.g3c205915188_0_0"_blank" class="card">
+        <div>
+          <div class="card-icon">🏫</div>
+          <h3 class="card-title">Les élèves ambassadeurs collège</h3>
+          <p class="card-desc">Présentation et mise en place des ambassadeurs au collège.</p>
+        </div>
+        <span class="card-btn">Ouvrir →</span>
+      </a>
+
+      <a href="https://docs.google.com/spreadsheets/d/12cZYZloPvomRQgiRq-DD2BJsFXGOJNFqJwUs8LqTuCY/edit?gid=824413696#gid=824413696" target="_blank" class="card">
+        <div>
+          <div class="card-icon">📅</div>
+          <h3 class="card-title">Un calendrier</h3>
+          <p class="card-desc">Planning des actions, formations et temps forts de l'année.</p>
+        </div>
+        <span class="card-btn">Consulter →</span>
+      </a>
+
+      <!-- LIGNE 2 -->
+      <a href="https://docs.google.com/document/d/1AEoCO-PQ-3hCAXkQxo1rziQ5UEZcyhkSbbIuZjjMyEc/edit?tab=t.0#heading=h.jpll6c14io2q" target="_blank" class="card">
+        <div>
+          <div class="card-icon">📋</div>
+          <h3 class="card-title">La fiche mission</h3>
+          <p class="card-desc">Le rôle, les engagements et le cadre d'action de l'ambassadeur.</p>
+        </div>
+        <span class="card-btn">Télécharger →</span>
+      </a>
+
+      <a href="https://docs.google.com/document/d/1K3G1a6nmOOOJm5N5YASoqNtbOtANI62htCzTt5Sv5fQ/edit?tab=t.0" target="_blank" class="card">
+        <div>
+          <div class="card-icon">✉️</div>
+          <h3 class="card-title">Lettre pour les parents</h3>
+          <p class="card-desc">Courrier d'information et d'autorisation à destination des familles.</p>
+        </div>
+        <span class="card-btn">Télécharger →</span>
+      </a>
+
+      <a href="https://docs.google.com/document/d/1MV-ATjkU7s11rSHaC7ryo8eyCtNsGET1NrCZwgIUU7g/edit?usp=sharing" target="_blank" class="card">
+        <div>
+          <div class="card-icon">📝</div>
+          <h3 class="card-title">La fiche élève</h3>
+          <p class="card-desc">Document de candidature et de suivi individuel pour l'élève.</p>
+        </div>
+        <span class="card-btn">Télécharger →</span>
+      </a>
+
+      <!-- LIGNE 3 -->
+      <a href="https://docs.google.com/document/d/1MV-ATjkU7s11rSHaC7ryo8eyCtNsGET1NrCZwgIUU7g/edit?usp=sharing" target="_blank" class="card">
+        <div>
+          <div class="card-icon">🎲</div>
+          <h3 class="card-title">Les "Jeux"</h3>
+          <p class="card-desc">Activités ludiques, brise-glaces et mises en situation.</p>
+        </div>
+        <span class="card-btn">Découvrir →</span>
+      </a>
+
+      <a href="https://docs.google.com/document/d/1Apre1PqMkNHu5DxeyfRo7IFAOswJ0hDX9P71WT0qRJI/edit?tab=t.0#heading=h.lds7uzuax1ig" target="_blank" class="card">
+        <div>
+          <div class="card-icon">📜</div>
+          <h3 class="card-title">La charte</h3>
+          <p class="card-desc">Les règles de bienveillance, de confidentialité et de respect.</p>
+        </div>
+        <span class="card-btn">Consulter →</span>
+      </a>
+
+      <a href="https://sites.google.com/view/groupebouclier/les-%C3%A9l%C3%A8ves-ambassadeurs/la-formation?authuser=0" target="_blank" class="card">
+        <div>
+          <div class="card-icon">🎓</div>
+          <h3 class="card-title">La formation</h3>
+          <p class="card-desc">Modules et supports pour former les nouveaux ambassadeurs.</p>
+        </div>
+        <span class="card-btn">Accéder →</span>
+      </a>
+    </div>
+
+    <div class="back-wrapper">
+      <a href="index.html" class="back-btn">← Retour à l'accueil</a>
+    </div>
+  </div>
+
+  <footer>
+    Groupe Bouclier — Prévention et lutte contre le harcèlement
+  </footer>
+
+</body>
+</html>
