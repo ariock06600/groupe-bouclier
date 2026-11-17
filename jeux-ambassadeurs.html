@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groupe Bouclier - Les Jeux Ambassadeurs</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #0f2420;
+      color: #f4efe6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Barre de navigation */
+    nav {
+      background-color: #16332e;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #c59b27;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .nav-logo {
+      font-size: 1.3em;
+      font-weight: 800;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: #d8c8a8;
+      text-decoration: none;
+      font-size: 0.95em;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: #c59b27;
+    }
+    /* Contenu principal */
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      margin: 40px auto;
+      padding: 0 20px;
+      flex: 1;
+    }
+    .page-header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #16332e 0%, #1e463f 100%);
+      border-radius: 14px;
+      border: 2px solid #c59b27;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+    .page-header h1 {
+      font-size: 2.3em;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .page-header p {
+      font-size: 1.1em;
+      color: #d8c8a8;
+    }
+    /* Liste des jeux en cartes horizontales */
+    .games-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .game-row {
+      background-color: #16332e;
+      border-radius: 14px;
+      border: 1px solid rgba(197, 155, 39, 0.35);
+      padding: 22px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      text-decoration: none;
+      color: #f4efe6;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+    .game-row:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.45);
+      border-color: #c59b27;
+    }
+    @media (max-width: 750px) {
+      .game-row { flex-direction: column; text-align: center; }
+    }
+    /* Vignettes visuelles reproduisant vos bannières */
+    .game-banner {
+      flex: 0 0 290px;
+      height: 135px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    @media (max-width: 750px) {
+      .game-banner { width: 100%; flex: none; }
+    }
+    .banner-icon { font-size: 2.3em; margin-bottom: 8px; }
+    .banner-title { font-size: 1.25em; font-weight: 800; letter-spacing: 0.5px; }
+
+    /* Couleurs spécifiques de vos 5 jeux */
+    .bg-detective { background-color: #36495e; color: #f6c927; }
+    .bg-mots      { background-color: #48427a; color: #ffffff; }
+    .bg-respect   { background-color: #8c6d5e; color: #f6c927; }
+    .bg-capables  { background-color: #7c1fa2; color: #ffffff; }
+    .bg-sentinelle{ background-color: #1c2938; color: #5bc0de; border: 2px solid #3c5470; }
+
+    .game-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .game-info p {
+      font-size: 1.02em;
+      line-height: 1.5;
+      color: #f4efe6;
+    }
+    .game-mission {
+      color: #d8c8a8 !important;
+      font-size: 0.98em !important;
+    }
+    .game-btn {
+      align-self: flex-start;
+      margin-top: 6px;
+      background-color: #c59b27;
+      color: #16332e;
+      padding: 9px 18px;
+      border-radius: 7px;
+      font-weight: 700;
+      font-size: 0.92em;
+      transition: background-color 0.2s;
+    }
+    @media (max-width: 750px) {
+      .game-btn { align-self: center; }
+    }
+    .game-row:hover .game-btn {
+      background-color: #ffffff;
+    }
+    .back-wrapper {
+      margin-top: 40px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .back-btn {
+      display: inline-block;
+      color: #d8c8a8;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 20px;
+      border: 1px solid rgba(197, 155, 39, 0.5);
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .back-btn:hover {
+      background-color: #c59b27;
+      color: #16332e;
+    }
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #8fa39f;
+      font-size: 0.9em;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">🛡️ GROUPE BOUCLIER</a>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="ambassadeurs.html" class="active">Élèves ambassadeurs</a>
+      <a href="presentations.html">Les présentations</a>
+      <a href="ressources.html">Les ressources</a>
+      <a href="livres.html">Livres dont vous êtes le héros</a>
+      <a href="seances.html">Séances "Clé en main"</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>🎲 Les "Jeux" Ambassadeurs</h1>
+      <p>Mises en situation interactives pour s'entraîner à repérer, comprendre et agir</p>
+    </div>
+
+    <div class="games-list">
+
+      <!-- JEU 1 : Mission Détective -->
+      <a href="https://sites.google.com/view/groupebouclier/les-%C3%A9l%C3%A8ves-ambassadeurs/les-jeux/d%C3%A9tective-physique" target="_blank" class="game-row">
+        <div class="game-banner bg-detective">
+          <div class="banner-icon">🕵️</div>
+          <div class="banner-title">Mission Détective</div>
+        </div>
+        <div class="game-info">
+          <p>Le <strong>contact physique</strong>, c'est parfois cool (sport, jeux), mais parfois c'est interdit (violence).</p>
+          <p class="game-mission"><strong>Ta mission :</strong> Faire la différence !</p>
+          <span class="game-btn">Lancer le jeu →</span>
+        </div>
+      </a>
+
+      <!-- JEU 2 : Le Poids des Mots -->
+      <a href="https://sites.google.com/view/groupebouclier/les-%C3%A9l%C3%A8ves-ambassadeurs/les-jeux/le-poids-des-mots" target="_blank" class="game-row">
+        <div class="game-banner bg-mots">
+          <div class="banner-icon">🧠</div>
+          <div class="banner-title">Le Poids des Mots</div>
+        </div>
+        <div class="game-info">
+          <p>Le <strong>harcèlement moral</strong>, ça ne se voit pas toujours (pas de bleus), mais ça fait très mal au cœur.</p>
+          <p class="game-mission"><strong>Ta mission :</strong> Repérer quand les mots ou les attitudes deviennent toxiques.</p>
+          <span class="game-btn">Lancer le jeu →</span>
+        </div>
+      </a>
+
+      <!-- JEU 3 : La Couleur du Respect -->
+      <a href="https://sites.google.com/view/groupebouclier/les-%C3%A9l%C3%A8ves-ambassadeurs/les-jeux/la-couleur-du-respect" target="_blank" class="game-row">
+        <div class="game-banner bg-respect">
+          <div class="banner-icon">🤝</div>
+          <div class="banner-title">La Couleur du Respect</div>
+        </div>
+        <div class="game-info">
+          <p>Nous sommes <strong>tous différents</strong> (couleur de peau, origine, cheveux...), et c'est une richesse !</p>
+          <p class="game-mission"><strong>Ta mission :</strong> Faire la différence entre s'intéresser (Curiosité) et rejeter (Racisme).</p>
+          <span class="game-btn">Lancer le jeu →</span>
+        </div>
+      </a>
+
+      <!-- JEU 4 : Tous Capables ! -->
+      <a href="https://sites.google.com/view/groupebouclier/les-%C3%A9l%C3%A8ves-ambassadeurs/les-jeux/tous-capables" target="_blank" class="game-row">
+        <div class="game-banner bg-capables">
+          <div class="banner-icon">🤗</div>
+          <div class="banner-title">Tous Capables !</div>
+        </div>
+        <div class="game-info">
+          <p>Le <strong>handicap</strong> peut être visible (fauteuil) ou invisible (autisme, surdité...).</p>
+          <p class="game-mission"><strong>Ta mission :</strong> Faire la différence entre inclure (Aider) et exclure (Rejeter).</p>
+          <span class="game-btn">Lancer le jeu →</span>
+        </div>
+      </a>
+
+      <!-- JEU 5 : Mission Sentinelle -->
+      <a href="https://sites.google.com/view/groupebouclier/les-%C3%A9l%C3%A8ves-ambassadeurs/les-jeux/mission-sentinelle" target="_blank" class="game-row">
+        <div class="game-banner bg-sentinelle">
+          <div class="banner-icon">🛡️</div>
+          <div class="banner-title">MISSION SENTINELLE</div>
+        </div>
+        <div class="game-info">
+          <p><strong>Bienvenue, Future Sentinelle !</strong> Le bien-être de l'école dépend de tes yeux et de tes oreilles.</p>
+          <p class="game-mission">Pour devenir un <strong>Ambassadeur</strong>, tu dois savoir faire la différence entre une simple dispute et une situation grave.</p>
+          <span class="game-btn">Lancer le jeu →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="back-wrapper">
+      <a href="ambassadeurs.html" class="back-btn">← Retour aux Élèves ambassadeurs</a>
+      <a href="index.html" class="back-btn">🏠 Accueil</a>
+    </div>
+  </div>
+
+  <footer>
+    Groupe Bouclier — Prévention et lutte contre le harcèlement
+  </footer>
+
+</body>
+</html>
